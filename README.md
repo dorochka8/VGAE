@@ -19,7 +19,7 @@ git clone https://github.com/dorochka8/VGAE.git
 ```
 
 ## Usage 
-To train the model woth the default settings on the Cora dataset, run: 
+To train the model with the default settings on the Cora dataset, run: 
 ```
 python3 main.py
 ```
@@ -27,7 +27,7 @@ python3 main.py
 You can modify the training parameters within the `config.py` script to experiment with different configurations.
 
 ## Results
-The results are provided for 10 independent training loops, each running for 200 epochs. Below is a table showcasing the loss, ROC AUC (Receiver Operating Characteristic Area Under the Curve), and AP (Average Precision) for a representative training loop:
+The results are provided for 10 independent training loops, each running for 200 epochs. Below is a table showcasing the loss, ROC AUC (Receiver Operating Characteristic Area Under the Curve), and AP (Average Precision) for 10 independent training loops:
 
 Loss   | ROC AUC  | AP   | 
 :---:  |   :---:  | :---:|
