@@ -6,7 +6,7 @@ This repository contains an implementation of the Variational Graph Auto-Encoder
 The implementation focuses on the Cora dataset, adhering to the default settings specified in the original paper. This includes:
 
 - Training for 200 epochs.
-- Utilizing the `torch.optim.Adam` optimizer with a learning rate of 0.02.
+- Utilizing the `torch.optim.Adam()` optimizer with a learning rate of 0.02.
 - A two-layer Graph Convolutional Network (GCN) for the encoder, with additional layers for computing `mu` (the mean) and `log_std` (the log standard deviation).
 - Hidden layer size of 32 and a latent space size of 16.
 - Employing the reparametrization trick for latent space embedding generation.
