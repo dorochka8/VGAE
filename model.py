@@ -3,15 +3,17 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch_geometric.nn import GCNConv
 
+from config import config
+
 
 class GVAE(nn.Module):
     def __init__(self, in_channels, out_channels):
         super().__init__()
-        self.encoder1 = GCNConv(in_channels=in_channels, out_channels=32)
-        self.encoder2 = GCNConv(in_channels=32, out_channels=16)
+        self.encoder1 = GCNConv(in_channels=in_channels,      out_channels=config['hidden'])
+        self.encoder2 = GCNConv(in_channels=config['hidden'], out_channels=config['latent'])
 
-        self.mu       = GCNConv(in_channels=16, out_channels=out_channels)
-        self.log_std  = GCNConv(in_channels=16, out_channels=out_channels)
+        self.mu       = GCNConv(in_channels=config['latent'], out_channels=out_channels)
+        self.log_std  = GCNConv(in_channels=config['latent'], out_channels=out_channels)
 
 
     def reparametrization(self, mu, log_std):
