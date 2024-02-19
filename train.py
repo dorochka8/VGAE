@@ -45,7 +45,7 @@ def train(model, x, edge_index, optimizer, epochs, device):
 
 
 def loss_fn(y_pred, y_true, mu, log_std, norm):
-    KLD = torch.mean(0.5 * torch.sum(1 + 2*log_std - mu**2 - (log_std**2).exp(), dim=1)) / y_pred.size(0)
+    KLD = torch.mean(0.5 * torch.sum(1 + 2*log_std - mu**2 - (log_std**2).exp(), dim=1))
     BCE = norm * F.binary_cross_entropy_with_logits(y_pred.view(-1), y_true.view(-1))
     return BCE -  KLD
 
